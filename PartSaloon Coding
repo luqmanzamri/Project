@@ -1,0 +1,2358 @@
+package ASSIGNMENT3;
+import java.util.Scanner;
+public class assignment3 {
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+        Scanner obj= new Scanner(System.in);
+		
+double custprice,total,Dis1,total1,studentprice;
+double Dis2, total2, studentprice1, Totalhome,Allprice;
+String name,address,IC,date,time;
+int phone,service,service1,set;
+char proceed, gender,proceed1,proceed3;
+	 
+String day;
+int noservice;
+int hair,hair1,hair2,hair3;
+double pro1=139.0,pro2=132.0,pro3=136.0,pro4=116.0,pro5=112.0,pro6=136.0;
+String[] treatment1 = {"Hair cut","Wash+Blow+Cut",
+	                "Wash+Blow Dry","Wash+Blow Curl",
+                       "Perming","Rebonding","Relaxing","Colouring",
+		          "Keratin Treatment","Relax Treatment","Scalp Treatment"};
+		
+double[]pay = {25.0,30.0,40.0,45.0,55.0,80.0,75.0,90.0,100.0,115.0,150.0};		
+		String[]fee = {"Service fee","Transportation fee"};		
+		double[]payfee = {15.0,80.0};	
+		int week;
+		
+		 System.out.println("*******************************************");
+		 System.out.print("\n");
+		 System.out.println("\tWELCOME TO LE'TOUCH SALON ");
+		 System.out.print("\n");
+		 System.out.println("*******************************************");
+		 
+		 System.out.println(" WORKING HOUR");
+		 System.out.println(" Friday : closed");
+		 System.out.println(" Monday - Thursday : 11 am - 9 pm");
+		 System.out.println(" Sunday - Saturday : 10 am - 10 pm");
+System.out.println(" maximum number of appointments per day is 2 ");
+System.out.println(" Please use a capital letter to fill the system");
+		 
+	  
+System.out.print("\n");
+System.out.print("Please Enter Your Name: ");
+name = obj.nextLine();
+System.out.print("Please Enter Your IC: ");
+IC = obj.nextLine();
+System.out.print("Please Enter Your Address: ");
+address = obj.nextLine();
+System.out.print("Please Enter Your Phone Number: ");
+phone = obj.nextInt();
+System.out.print("Please Enter Your gender(F/M): ");
+gender =obj.next().charAt(0);
+System.out.print("Please Enter your matric number (not a student, please enter 0) : ");
+int matric = obj.nextInt();
+System.out.println("");
+System.out.print("Do you want to take a hair quiz and some product recommendations? (Y/N) ");
+char quiz = obj.next().charAt(0);
+		
+if (quiz=='Y') {
+System.out.println("");
+System.out.println("  HAIR QUIZ  ");
+System.out.println("");
+System.out.println("What is your hair type: ");
+System.out.println("1. straight");
+System.out.println("2. curl ");
+System.out.println("3. wavy");
+System.out.println("");
+System.out.print("Enter your answer for question 1: ");
+hair=obj.nextInt();
+System.out.println("");
+System.out.println("My hair is : ");
+System.out.println("1. natural");
+System.out.println("2. bleached");
+System.out.println("3. permed");
+System.out.println("4. Straightening");
+System.out.println("");
+System.out.print("Enter your answer for question 2: ");
+hair1=obj.nextInt();
+System.out.println("");
+System.out.println("What is your main hair problem: ");
+System.out.println("1. Damaged hair");
+System.out.println("2. Coloured hair");
+System.out.println("3. Frizzy hair");
+System.out.println("4. Thinning hair");
+System.out.println("5. Dry hair ");
+System.out.println("6. Dull hair");
+System.out.println("");
+System.out.print("Enter your answer for question 3: ");
+hair2=obj.nextInt();
+System.out.println("");
+System.out.println("What is your weather ?: ");
+System.out.println("1. sunny");
+System.out.println("2. snowy ");
+System.out.println("3. mix");
+System.out.println("");
+System.out.print("Enter your answer for question 4: ");
+hair3=obj.nextInt();
+	
+System.out.println("");
+System.out.println("\t\t\tPERSONAL DETAILS ");
+System.out.println("");
+System.out.println("Name      : " + name);
+System.out.println("IC        : " + IC);
+System.out.println("No Matric : " + matric);
+System.out.println("Gender    : " + gender);
+System.out.println("No.Tel    : " + phone);
+System.out.println("Address   : " + address);
+System.out.println("");
+			
+if ( hair2==1) {
+System.out.println("");
+System.out.println(" ^^^^^ YOUR RESULT ^^^^^ ");
+System.out.println("");
+System.out.println("OHH NO !! your hair is damaged ");
+System.out.println("Product recommendation: ");
+System.out.println("Therapist damaged hair deep treatment hair care set");
+System.out.println("Price:RM "+ pro1);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+else if (hair2==2) {
+System.out.println("");
+System.out.println(" ^^^^^  YOUR RESULT ^^^^^ ");
+System.out.println("");
+System.out.println("You want to protect your hair coloured right? ");
+System.out.println("Product recommendation: ");
+System.out.println("Blond absolu platinum blonde hair care set");
+System.out.println("Price:RM "+ pro2);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+else if (hair2==3) {
+System.out.println("");
+System.out.println(" ^^^^^  YOUR RESULT ^^^^^  ");
+System.out.println("");
+System.out.println("OHH NO!! Your hair is frizzy ");
+System.out.println("Product recommendation: ");
+System.out.println("frizz deep treatment hair care set");
+System.out.println("Price:RM "+ pro3);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+	
+else if (hair2==4) {
+System.out.println("");
+System.out.println(" ^^^^^ YOUR RESULT ^^^^^ ");
+System.out.println("");
+System.out.println("OHH NO!! Your hair keep thinning everyday! ");
+System.out.println("Product recommendation: ");
+System.out.println("Thinning hair densifique thinning hair care set");
+System.out.println("Price:RM "+ pro4);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+else if (hair2==5) {
+System.out.println("");
+System.out.println(" ^^^^^ YOUR RESULT ^^^^^ ");
+System.out.println("");
+System.out.println("OHH NO!! Your hair is too dry");
+System.out.println("Product recommendation: " );
+System.out.println("Nutritive slightly dry hair care set");
+System.out.println("Price:RM "+ pro5);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+		  	           
+else {
+System.out.println("");
+System.out.println(" ^^^^^  YOUR RESULT ^^^^^ ");
+System.out.println("");
+System.out.println("OHH N0!! You have a dull hair  ");
+System.out.println("Product recommendation: ");
+System.out.println("Elixir ultime deep treatment hair care set");
+System.out.println("Price:RM "+ pro6);
+System.out.println("");
+System.out.print("Do you want to proceed? (Y/N) ");
+proceed3 = obj.next().charAt(0);}
+		  	     
+if (proceed3=='Y'&& hair2==1) {
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("");
+System.out.println("Therapist damaged hair deep treatment hair care set  : RM  "+ pro1);
+System.out.println("Free delivery                                        : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro1);
+System.out.println("");
+System.out.println("Thank you for your purchase!");}
+else if (proceed3=='Y'&& hair2==2) {
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("blond absolu platinum blonde hair set        : RM  "+ pro2);
+System.out.println("Free delivery                                : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro2);
+System.out.println("");			
+System.out.println("Thank you for your purchase!");}
+else if (proceed3=='Y'&& hair2==3) {	
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("");
+System.out.println("Anti-frizz deep treatment hair care set      : RM  "+ pro3);
+System.out.println("Free delivery                                : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro3);
+System.out.println("");			
+System.out.println("Thank you for your purchase!");}
+else if (proceed3=='Y'&& hair2==4) {
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("");
+System.out.println("Thinning hair densifique thinning hair set   : RM  "+ pro4);
+System.out.println("Free delivery                                : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro4);
+System.out.println("");			
+System.out.println("Thank you for your purchase!");}
+else if (proceed3=='Y'&& hair2==5) {
+   				  System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("");
+System.out.println("Nutritive slightly dry hair care set         : RM  "+ pro5);
+System.out.println("Free delivery                                : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro5);
+System.out.println("");			
+System.out.println("Thank you for your purchase!");}
+else if (proceed3=='Y' && hair2==6) {
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("");
+System.out.println("Elixir ultime deep treatment hair care set   : RM  "+ pro6);
+System.out.println("Free delivery                                : RM  "+   0.0);
+System.out.println("");
+System.out.println("TOTAL price to be paid : RM  "+ pro6)
+System.out.println("");			
+System.out.println("Thank you for your purchase!");}
+else {
+System.out.println("");
+System.out.println(" Thank you for your support ");}}
+else {
+System.out.println("");  
+System.out.print("Do you have an appointment to cancel or extend? (Y/N) ");
+char choice1 = obj.next().charAt(0);
+			 
+if (choice1=='Y') {
+System.out.println("");
+System.out.println("1.Cancel the appointment ");
+System.out.println("2.Extend the appointment");
+System.out.println("");
+System.out.print("Please enter your choice: ");
+int choice2 = obj.nextInt();
+if (choice2==1) {
+System.out.println("");
+System.out.println("Thank you for your support!");
+System.out.println("We will improve our service :)");}
+else {
+System.out.println("Please set again your next appointment " );
+System.out.print("Date : ");
+date =obj.next();
+System.out.print("Time (example* 10AM) : ");
+time = obj.next();
+System.out.print("Day  : ");
+day = obj.next();
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For the new Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("");
+System.out.println("\t\t\tPERSONAL DETAILS ");
+System.out.println("");
+System.out.println("Name      : " + name);
+System.out.println("IC        : " + IC);
+System.out.println("No Matric : " + matric);
+System.out.println("Gender    : " + gender);
+System.out.println("No.Tel    : " + phone);
+System.out.println("Address   : " + address);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" ps: cancel anytime"); }}
+else {
+System.out.println("");
+System.out.print("Do you want to set appointment at 1.home or 2.salon: " );
+set = obj.nextInt();
+System.out.println("");
+System.out.print("How many service do you want to book? " );
+noservice=obj.nextInt();
+System.out.println("");
+System.out.print("Do you want to book on 1-weekend or 2-weekday : ");
+week = obj.nextInt();
+System.out.print("Day  : ");
+day = obj.next();
+System.out.print("Date : ");
+date= obj.next();
+System.out.print("Time (example* 10AM) : ");
+time=obj.next();
+System.out.println("");
+System.out.print("Do you want to proceed : " );
+proceed = obj.next().charAt(0);
+System.out.println("");
+			 
+if (proceed=='Y' && noservice==1) {
+System.out.println("");	 
+System.out.println("SERVICES");
+System.out.println("");
+System.out.println(" 1 : Haircut ");
+System.out.println(" 2 : Wash & Blow ");
+System.out.println(" 3 : Chemical Work ");
+System.out.println(" 4 : Treatment");
+System.out.print("\nPlease enter the service do you want : ");
+service = obj.nextInt();
+
+if (service==1) {
+System.out.println(" \nHAIR CUT: ");
+System.out.println("");
+System.out.println("1.Hair cut :\t\t\tMale\t\tFemale");
+System.out.println("\t\t\t\tRM 30\t\tRM 40");
+System.out.println("");
+System.out.println("2.Wash + Blow + cut : \t\tMale\t\tFemale");
+System.out.println("\t\t\t\tRM 45\t\tRM 55");}
+else if (service==2) {
+System.out.println(" \nWASH AND BLOW: ");
+System.out.println("");
+System.out.println("1.Wash + Blow Dry  :\t\t\tRM 25");
+System.out.println("2.Wash + Blow Curl :\t\t\tRM 30");}
+else if (service==3) {
+System.out.println(" \nCHEMICAL WORK: ");
+System.out.println("");
+System.out.println("1.Colouring :\t\t\tRM 75");
+System.out.println("2.Perming   :\t\t\tRM 80");
+System.out.println("3.Rebonding :\t\t\tRM 90");
+System.out.println("4.Relaxing  :\t\t\tRM 80");}
+		
+else {
+System.out.println(" \nTREATMENT: ");
+System.out.println("");
+System.out.println("1.Scalp Treatment  :\t\t\tRM 100");
+System.out.println("2.Relax Treatment  :\t\t\tRM 115");
+System.out.println("3.Keratin Treatment:\t\t\tRM 150");}
+System.out.println("");
+System.out.print("\nPlease enter your choice of service : ");
+service1= obj.nextInt();
+
+// normal customer both weekdays and weekends
+if (service==1 && service1==1 && set==2 && gender=='F'&& matric==0) {
+System.out.println("");
+System.out.println(treatment1[0]          + ": RM "+pay[2]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==1 && set==2 && gender=='M'&& matric==0) {
+System.out.println("");
+System.out.println(treatment1[0]          + ": RM "+pay[1]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1&& service1==2 && set==2 && gender=='F'&& matric ==0) {
+System.out.println("");
+System.out.println(treatment1[1]          + ": RM "+pay[4]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==2 && set==2 && gender=='M' && matric==0) {
+System.out.println("");
+System.out.println(treatment1[1]          + ": RM "+pay[3]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[2]      + ": RM "+pay[0]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[3]          + ": RM "+pay[1]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[7]          + ": RM "+pay[6]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[4]          + ": RM "+pay[5]);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==3 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[5]          + ": RM "+pay[7]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==4 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[6]          + ": RM "+pay[5]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[10]         + ": RM "+pay[8]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[9]          + ": RM "+pay[9]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==3 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[8]          + ": RM "+pay[10]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+// both customer choose appointment at home
+else if (service==1 && service1==1 && set==1 && gender=='F') {
+Totalhome=(pay[2]*0.15);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==1 && set==1 && gender=='M') {
+Totalhome=(pay[1]*0.15);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1&& service1==2 && set==1 && gender=='F') {
+Totalhome=(pay[4]*0.15);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+					
+else if (service==1 && service1==2 && set==1 && gender=='M') {
+Totalhome=(pay[3]*0.15);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==1 && set==1) {
+Totalhome= (pay[0]*0.15);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==2 && set==1) {
+Totalhome= (pay[1]*0.15);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==1 && set==1) {
+Totalhome=(pay[6]*0.15);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==2 && set==1) {
+Totalhome= (pay[5]*0.15);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==3 && set==1) {
+Totalhome= (pay[7]*0.15);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==4 && set==1) {
+Totalhome= (pay[5]*0.15);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==1 && set==1) {
+Totalhome=(pay[8]*0.15);
+System.out.println("");
+System.out.println(treatment1[10]  + ": RM "+pay[8]);
+System.out.println("Total discount    : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==2 && set==1) {
+Totalhome= (pay[9]*0.15);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==3 && set==1) {
+Totalhome=(pay[10]*0.15);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);} 
+					
+weekends student 
+else if (service==1 && service1==1 && set==2 && gender=='F'&& week==1) {
+Dis2=(pay[2]*0.30);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==1) {
+Dis2= (pay[1]*0.30);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==1) {
+Dis2= (pay[4]*0.30);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==1) {
+Dis2= (pay[3]*0.30);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==1 && set==2)&& week==1) {
+Dis2=(pay[0]*0.30);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[1]*0.30);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+ System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==1 && set==2)&& week==1) {
+Dis2 = (pay[6]*0.30);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[5]*0.30);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==3 && set==2)&& week==1) {
+Dis2= (pay[7]*0.30);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==4 && set==2)&& week==1) {
+Dis2= (pay[5]*0.30);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==1 && set==2)&& week==1) {
+Dis2= (pay[8]*0.30);
+System.out.println("");
+System.out.println(treatment1[10] + ": RM "+pay[8]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[9]*0.30);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==3 && set==2)&& week==1) {
+Dis2= (pay[10]*0.30);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+// weekdays student 
+else if (service==1 && service1==1 && set==2 && gender=='F'&& week==2) {
+Dis1= pay[2]*0.25;
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==2){
+Dis1= (pay[1]*0.25);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==2){
+Dis1= (pay[4]*0.25);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if( (service==1 && service1==2 && set==2 && gender=='M')&& week==2){
+Dis1= (pay[3]*0.25);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==2 && service1==1 && set==2)&& week==2) {
+Dis1= (pay[0]*0.25);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==2 && set==2)&& week==2) {
+Dis1= (pay[1]*0.25);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+else if ((service==3 && service1==1 && set==2)&& week==2){
+Dis1= (pay[6]*0.25);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==2 && set==2)&& week==2) {
+Dis1= (pay[5]*0.25);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==3 && set==2)&& week==2) {
+Dis1= (pay[7]*0.25);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==4 && set==2)&& week==2) {
+Dis1= (pay[5]*0.25);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==1 && set==2)&& week==2) {
+Dis1= (pay[8]*0.25);
+System.out.println("");
+System.out.println(treatment1[10] + ": RM "+pay[8]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==2 && set==2)&& week==2){
+Dis1= (pay[9]*0.25);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else{
+Dis1= (pay[10]*0.25);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+proceed1 = obj.next().charAt(0);}
+						 
+if (proceed1 =='Y') {		
+System.out.println("");
+System.out.println("\t\t\tPERSONAL DETAILS ");
+System.out.println("");
+System.out.println("Name      : " + name);
+System.out.println("IC        : " + IC);
+System.out.println("No Matric : " + matric);
+System.out.println("Gender    : " + gender);
+System.out.println("No.Tel    : " + phone);
+System.out.println("Address   : " + address);
+System.out.println("");	
+			
+	
+if ( service==1 && service1==1&& set==2 && gender=='F' && matric==0) {
+printCalculate1 (pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==2 && gender=='M'&& matric==0) {
+printCalculate2 (pay,payfee,time,date,day);}
+else if (service==1&& service1==2 && set==2 && gender=='F'&& matric ==0) {
+printCalculate3(pay,payfee,time,date,day);}
+else if (service==1 && service1==2 && set==2 && gender=='M' && matric==0) {
+printCalculate4(pay,payfee,time,date,day);}
+else if(service==2 && service1==1 && set==2 && matric==0) {  
+printCalculate5(pay,payfee,time,date,day);} 
+else if(service==2 && service1==2 && set==2 && matric==0) {
+printCalculate6(pay,payfee,time,date,day);}
+else if(service==3 && service1==1 && set==2 && matric==0) {	
+printCalculate7(pay,payfee,time,date,day);}
+else if(service==3 && service1==2 && set==2 && matric==0) {		 
+printCalculate8(pay,payfee,time,date,day);}	 
+else if(service==3 && service1==3 && set==2 && matric==0) {
+printCalculate9(pay,payfee,time,date,day);}
+else if(service==3 && service1==4 && set==2 && matric==0) {
+printCalculate10(pay,payfee,time,date,day);}
+else if(service==4 && service1==1 && set==2 && matric==0) {
+printCalculate11(pay,payfee,time,date,day);}
+else if(service==4 && service1==2 && set==2 && matric==0) {
+printCalculate12(pay,payfee,time,date,day);}
+else if(service==4 && service1==3 && set==2 && matric==0) {	
+printCalculate13(pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==1 && gender=='F') {
+print1(pay,payfee,time,date,day,address);}	 
+else if (service==1 && service1==1 && set==1 && gender=='M') {
+print2(pay,payfee,time,date,day,address);}
+else if (service==1&& service1==2 && set==1 && gender=='F') {
+print3(pay,payfee,time,date,day,address);}	
+else if (service==1 && service1==2 && set==1 && gender=='M') {
+print4(pay,payfee,time,date,day,address);}
+else if(service==2 && service1==1 && set==1) {
+print5(pay,payfee,time,date,day,address);}
+else if(service==2 && service1==2 && set==1) {
+print6(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==1 && set==1) {
+print7(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==2 && set==1) {
+print8(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==3 && set==1) {
+print9(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==4 && set==1) {
+print10(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==1 && set==1) {
+print11(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==2 && set==1) {
+print12(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==3 && set==1) {
+print13(pay,payfee,time,date,day,address);}
+else if ((service==1 && service1==1 && set==2 && gender=='F')&& week==1) { 
+printcal1(pay,payfee,time,date,day);}
+else if ((service==1&& service1==1 && set==2 && gender=='M')&& week==1) {
+printcal2(pay,payfee,time,date,day);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==1) {
+printcal3(pay,payfee,time,date,day);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==1) {
+printcal4(pay,payfee,time,date,day);}
+else if((service==2 && service1==1 && set==2)&& week==1) {
+printcal5(pay,payfee,time,date,day);}
+else if((service==2 && service1==2 && set==2)&& week==1) {
+printcal6(pay,payfee,time,date,day);}
+else if((service==3 && service1==1 && set==2)&& week==1) {
+printcal7(pay,payfee,time,date,day);}
+else if((service==3 && service1==2 && set==2)&& week==1) {
+printcal8(pay,payfee,time,date,day);}
+else if((service==3 && service1==3 && set==2)&& week==1) {
+printcal9(pay,payfee,time,date,day);}
+else if((service==3 && service1==4 && set==2)&& week==1) {
+printcal10(pay,payfee,time,date,day);}
+else if((service==4 && service1==1 && set==2)&& week==1) {
+printcal11(pay,payfee,time,date,day);}
+else if((service==4 && service1==2 && set==2)&& week==1) {
+printcal12(pay,payfee,time,date,day);}
+else if((service==4 && service1==3 && set==2)&& week==1) {
+printcal13(pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==2 && gender=='F' && week==2) {
+prinT1(pay,payfee,time,date,day);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==2){
+prinT2(pay,payfee,time,date,day);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==2){  
+prinT3(pay,payfee,time,date,day);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==2){
+prinT4(pay,payfee,time,date,day);}
+else if (service==2 && service1==1 && set==2&& week==2) {
+prinT5(pay,payfee,time,date,day);}
+else if((service==2 && service1==2 && set==2)&& week==2) {
+prinT6(pay,payfee,time,date,day);}
+else if ((service==3 && service1==1 && set==2)&& week==2){
+prinT7(pay,payfee,time,date,day);}
+else if((service==3 && service1==2 && set==2)&& week==2) {
+prinT8(pay,payfee,time,date,day);}
+else if((service==3 && service1==3 && set==2)&& week==2) {
+prinT9(pay,payfee,time,date,day);}
+else if((service==3 && service1==4 && set==2)&& week==2) {
+prinT10(pay,payfee,time,date,day);}
+else if((service==4 && service1==1 && set==2)&& week==2) {
+prinT11(pay,payfee,time,date,day);}
+else if((service==4 && service1==2 && set==2)&& week==2) {
+prinT12(pay,payfee,time,date,day);}
+else if ((service==4 && service1==3 &&set==2)&& week==2){   
+prinT13(pay,payfee,time,date,day);}
+		 
+else {
+System.out.println("");
+System.out.println ("Thank you for your support!! ** loading to main page...**");}}
+else {
+System.out.println("");
+System.out.println ("Thank you for your support!! ** loading to the main page...**");
+					}}
+if (proceed=='Y') {
+	if (noservice==2) {
+	System.out.println("");
+								System.out.println("\t\t\tPERSONAL DETAILS ");
+System.out.println("");
+System.out.println("Name      : " + name);
+System.out.println("IC        : " + IC);
+System.out.println("No Matric : " + matric);
+System.out.println("Gender    : " + gender);
+System.out.println("No.Tel    : " + phone);
+System.out.println("Address   : " + address);
+System.out.println("");		
+for (int i =0; i<2; i++) {
+System.out.println("");	 
+								 System.out.println("SERVICES");
+System.out.println("SERVICES");
+System.out.println("");
+System.out.println(" 1 : Haircut ");
+System.out.println(" 2 : Wash & Blow ");
+System.out.println(" 3 : Chemical Work ");
+System.out.println(" 4 : Treatment");
+System.out.print("\nPlease enter the service do you want : ");
+service = obj.nextInt();
+
+if (service==1) {
+System.out.println(" \nHAIR CUT: ");
+System.out.println("");
+System.out.println("1.Hair cut :\t\t\tMale\t\tFemale");
+System.out.println("\t\t\t\tRM 30\t\tRM 40");
+System.out.println("");
+System.out.println("2.Wash + Blow + cut : \t\tMale\t\tFemale");
+System.out.println("\t\t\t\tRM 45\t\tRM 55");}
+else if (service==2) {
+System.out.println(" \nWASH AND BLOW: ");
+System.out.println("");
+System.out.println("1.Wash + Blow Dry  :\t\t\tRM 25");
+System.out.println("2.Wash + Blow Curl :\t\t\tRM 30");}
+else if (service==3) {
+System.out.println(" \nCHEMICAL WORK: ");
+System.out.println("");
+System.out.println("1.Colouring :\t\t\tRM 75");
+System.out.println("2.Perming   :\t\t\tRM 80");
+System.out.println("3.Rebonding :\t\t\tRM 90");
+System.out.println("4.Relaxing  :\t\t\tRM 80");}
+		
+else {
+System.out.println(" \nTREATMENT: ");
+System.out.println("");
+System.out.println("1.Scalp Treatment  :\t\t\tRM 100");
+System.out.println("2.Relax Treatment  :\t\t\tRM 115");
+System.out.println("3.Keratin Treatment:\t\t\tRM 150");}
+System.out.println("");
+System.out.print("\nPlease enter your choice of service : ");
+service1= obj.nextInt();
+
+// normal customer both weekdays and weekends
+if (service==1 && service1==1 && set==2 && gender=='F'&& matric==0) {
+System.out.println("");
+System.out.println(treatment1[0]          + ": RM "+pay[2]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==1 && set==2 && gender=='M'&& matric==0) {
+System.out.println("");
+System.out.println(treatment1[0]          + ": RM "+pay[1]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1&& service1==2 && set==2 && gender=='F'&& matric ==0) {
+System.out.println("");
+System.out.println(treatment1[1]          + ": RM "+pay[4]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==2 && set==2 && gender=='M' && matric==0) {
+System.out.println("");
+System.out.println(treatment1[1]          + ": RM "+pay[3]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[2]      + ": RM "+pay[0]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[3]          + ": RM "+pay[1]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[7]          + ": RM "+pay[6]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[4]          + ": RM "+pay[5]);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==3 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[5]          + ": RM "+pay[7]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==4 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[6]          + ": RM "+pay[5]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==1 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[10]         + ": RM "+pay[8]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==2 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[9]          + ": RM "+pay[9]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==3 && set==2 && matric==0) {
+System.out.println("");
+System.out.println(treatment1[8]          + ": RM "+pay[10]);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+// both customer choose appointment at home
+else if (service==1 && service1==1 && set==1 && gender=='F') {
+Totalhome=(pay[2]*0.15);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1 && service1==1 && set==1 && gender=='M') {
+Totalhome=(pay[1]*0.15);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if (service==1&& service1==2 && set==1 && gender=='F') {
+Totalhome=(pay[4]*0.15);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+					
+else if (service==1 && service1==2 && set==1 && gender=='M') {
+Totalhome=(pay[3]*0.15);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==1 && set==1) {
+Totalhome= (pay[0]*0.15);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==2 && service1==2 && set==1) {
+Totalhome= (pay[1]*0.15);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==1 && set==1) {
+Totalhome=(pay[6]*0.15);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==2 && set==1) {
+Totalhome= (pay[5]*0.15);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==3 && set==1) {
+Totalhome= (pay[7]*0.15);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==3 && service1==4 && set==1) {
+Totalhome= (pay[5]*0.15);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==1 && set==1) {
+Totalhome=(pay[8]*0.15);
+System.out.println("");
+System.out.println(treatment1[10]  + ": RM "+pay[8]);
+System.out.println("Total discount    : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==2 && set==1) {
+Totalhome= (pay[9]*0.15);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if(service==4 && service1==3 && set==1) {
+Totalhome=(pay[10]*0.15);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Totalhome);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);} 
+					
+weekends student 
+else if (service==1 && service1==1 && set==2 && gender=='F'&& week==1) {
+Dis2=(pay[2]*0.30);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==1) {
+Dis2= (pay[1]*0.30);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==1) {
+Dis2= (pay[4]*0.30);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==1) {
+Dis2= (pay[3]*0.30);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==1 && set==2)&& week==1) {
+Dis2=(pay[0]*0.30);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[1]*0.30);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+ System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==1 && set==2)&& week==1) {
+Dis2 = (pay[6]*0.30);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[5]*0.30);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==3 && set==2)&& week==1) {
+Dis2= (pay[7]*0.30);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==4 && set==2)&& week==1) {
+Dis2= (pay[5]*0.30);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==1 && set==2)&& week==1) {
+Dis2= (pay[8]*0.30);
+System.out.println("");
+System.out.println(treatment1[10] + ": RM "+pay[8]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==2 && set==2)&& week==1) {
+Dis2= (pay[9]*0.30);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==3 && set==2)&& week==1) {
+Dis2= (pay[10]*0.30);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Dis2);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+// weekdays student 
+else if (service==1 && service1==1 && set==2 && gender=='F'&& week==2) {
+Dis1= pay[2]*0.25;
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[2]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==2){
+Dis1= (pay[1]*0.25);
+System.out.println("");
+System.out.println(treatment1[0]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==2){
+Dis1= (pay[4]*0.25);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[4]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if( (service==1 && service1==2 && set==2 && gender=='M')&& week==2){
+Dis1= (pay[3]*0.25);
+System.out.println("");
+System.out.println(treatment1[1]  + ": RM "+pay[3]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if ((service==2 && service1==1 && set==2)&& week==2) {
+Dis1= (pay[0]*0.25);
+System.out.println("");
+System.out.println(treatment1[2]  + ": RM "+pay[0]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==2 && service1==2 && set==2)&& week==2) {
+Dis1= (pay[1]*0.25);
+System.out.println("");
+System.out.println(treatment1[3]  + ": RM "+pay[1]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+					
+else if ((service==3 && service1==1 && set==2)&& week==2){
+Dis1= (pay[6]*0.25);
+System.out.println("");
+System.out.println(treatment1[7]  + ": RM "+pay[6]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==2 && set==2)&& week==2) {
+Dis1= (pay[5]*0.25);
+System.out.println("");
+System.out.println(treatment1[4]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println(""); 
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==3 && set==2)&& week==2) {
+Dis1= (pay[7]*0.25);
+System.out.println("");
+System.out.println(treatment1[5]  + ": RM "+pay[7]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==3 && service1==4 && set==2)&& week==2) {
+Dis1= (pay[5]*0.25);
+System.out.println("");
+System.out.println(treatment1[6]  + ": RM "+pay[5]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==1 && set==2)&& week==2) {
+Dis1= (pay[8]*0.25);
+System.out.println("");
+System.out.println(treatment1[10] + ": RM "+pay[8]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else if((service==4 && service1==2 && set==2)&& week==2){
+Dis1= (pay[9]*0.25);
+System.out.println("");
+System.out.println(treatment1[9]  + ": RM "+pay[9]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+System.out.print("Do you want to proceed? " );
+proceed1 = obj.next().charAt(0);}
+else{
+Dis1= (pay[10]*0.25);
+System.out.println("");
+System.out.println(treatment1[8]  + ": RM "+pay[10]);
+System.out.println("Total discount   : RM "+Dis1);
+System.out.println("");
+proceed1 = obj.next().charAt(0);}
+									
+if (proceed1=='N') {
+System.out.println("");
+System.out.println ("Thank you for your support!! ** loading to main page...**"); 
+i = i+2;}
+else {
+										 
+
+										if ( service==1 && service1==1&& set==2 && gender=='F' && matric==0) {
+printCalculate1 (pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==2 && gender=='M'&& matric==0) {
+printCalculate2 (pay,payfee,time,date,day);}
+else if (service==1&& service1==2 && set==2 && gender=='F'&& matric ==0) {
+printCalculate3(pay,payfee,time,date,day);}
+else if (service==1 && service1==2 && set==2 && gender=='M' && matric==0) {
+printCalculate4(pay,payfee,time,date,day);}
+else if(service==2 && service1==1 && set==2 && matric==0) {  
+printCalculate5(pay,payfee,time,date,day);} 
+else if(service==2 && service1==2 && set==2 && matric==0) {
+printCalculate6(pay,payfee,time,date,day);}
+else if(service==3 && service1==1 && set==2 && matric==0) {	
+printCalculate7(pay,payfee,time,date,day);}
+else if(service==3 && service1==2 && set==2 && matric==0) {		 
+printCalculate8(pay,payfee,time,date,day);}	 
+else if(service==3 && service1==3 && set==2 && matric==0) {
+printCalculate9(pay,payfee,time,date,day);}
+else if(service==3 && service1==4 && set==2 && matric==0) {
+printCalculate10(pay,payfee,time,date,day);}
+else if(service==4 && service1==1 && set==2 && matric==0) {
+printCalculate11(pay,payfee,time,date,day);}
+else if(service==4 && service1==2 && set==2 && matric==0) {
+printCalculate12(pay,payfee,time,date,day);}
+else if(service==4 && service1==3 && set==2 && matric==0) {	
+printCalculate13(pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==1 && gender=='F') {
+print1(pay,payfee,time,date,day,address);}	 
+else if (service==1 && service1==1 && set==1 && gender=='M') {
+print2(pay,payfee,time,date,day,address);}
+else if (service==1&& service1==2 && set==1 && gender=='F') {
+print3(pay,payfee,time,date,day,address);}	
+else if (service==1 && service1==2 && set==1 && gender=='M') {
+print4(pay,payfee,time,date,day,address);}
+else if(service==2 && service1==1 && set==1) {
+print5(pay,payfee,time,date,day,address);}
+else if(service==2 && service1==2 && set==1) {
+print6(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==1 && set==1) {
+print7(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==2 && set==1) {
+print8(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==3 && set==1) {
+print9(pay,payfee,time,date,day,address);}
+else if(service==3 && service1==4 && set==1) {
+print10(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==1 && set==1) {
+print11(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==2 && set==1) {
+print12(pay,payfee,time,date,day,address);}
+else if(service==4 && service1==3 && set==1) {
+print13(pay,payfee,time,date,day,address);}
+else if ((service==1 && service1==1 && set==2 && gender=='F')&& week==1) { 
+printcal1(pay,payfee,time,date,day);}
+else if ((service==1&& service1==1 && set==2 && gender=='M')&& week==1) {
+printcal2(pay,payfee,time,date,day);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==1) {
+printcal3(pay,payfee,time,date,day);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==1) {
+printcal4(pay,payfee,time,date,day);}
+else if((service==2 && service1==1 && set==2)&& week==1) {
+printcal5(pay,payfee,time,date,day);}
+else if((service==2 && service1==2 && set==2)&& week==1) {
+printcal6(pay,payfee,time,date,day);}
+else if((service==3 && service1==1 && set==2)&& week==1) {
+printcal7(pay,payfee,time,date,day);}
+else if((service==3 && service1==2 && set==2)&& week==1) {
+printcal8(pay,payfee,time,date,day);}
+else if((service==3 && service1==3 && set==2)&& week==1) {
+printcal9(pay,payfee,time,date,day);}
+else if((service==3 && service1==4 && set==2)&& week==1) {
+printcal10(pay,payfee,time,date,day);}
+else if((service==4 && service1==1 && set==2)&& week==1) {
+printcal11(pay,payfee,time,date,day);}
+else if((service==4 && service1==2 && set==2)&& week==1) {
+printcal12(pay,payfee,time,date,day);}
+else if((service==4 && service1==3 && set==2)&& week==1) {
+printcal13(pay,payfee,time,date,day);}
+else if (service==1 && service1==1 && set==2 && gender=='F' && week==2) {
+prinT1(pay,payfee,time,date,day);}
+else if ((service==1 && service1==1 && set==2 && gender=='M')&& week==2){
+prinT2(pay,payfee,time,date,day);}
+else if ((service==1&& service1==2 && set==2 && gender=='F')&& week==2){  
+prinT3(pay,payfee,time,date,day);}
+else if ((service==1 && service1==2 && set==2 && gender=='M')&& week==2){
+prinT4(pay,payfee,time,date,day);}
+else if (service==2 && service1==1 && set==2&& week==2) {
+prinT5(pay,payfee,time,date,day);}
+else if((service==2 && service1==2 && set==2)&& week==2) {
+prinT6(pay,payfee,time,date,day);}
+else if ((service==3 && service1==1 && set==2)&& week==2){
+prinT7(pay,payfee,time,date,day);}
+else if((service==3 && service1==2 && set==2)&& week==2) {
+prinT8(pay,payfee,time,date,day);}
+else if((service==3 && service1==3 && set==2)&& week==2) {
+prinT9(pay,payfee,time,date,day);}
+else if((service==3 && service1==4 && set==2)&& week==2) {
+prinT10(pay,payfee,time,date,day);}
+else if((service==4 && service1==1 && set==2)&& week==2) {
+prinT11(pay,payfee,time,date,day);}
+else if((service==4 && service1==2 && set==2)&& week==2) {
+prinT12(pay,payfee,time,date,day);}
+else if ((service==4 && service1==3 &&set==2)&& week==2){   
+prinT13(pay,payfee,time,date,day);}
+else {
+System.out.println("");
+System.out.println ("Thank you for your support!! ** loading to the main page...**");}}
+}}}}}}
+					 
+		  
+
+public static void printCalculate1(double[]pay,double[]payfee,String time,String date,String day) {       
+double custprice = pay[2] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair cut               : RM "+ pay[2]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+				      
+public static void printCalculate2 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[1] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair cut               : RM "+ pay[1]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+				     
+public static void printCalculate3 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[4] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM "+ pay[4] );
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }  
+				     
+public static void printCalculate4 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[3] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM "+ pay[3]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+						
+
+public static void printCalculate5 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[0] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash + Blow Dry        : RM "+ pay[0]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+						 
+public static void printCalculate6 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[1] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash + Blow Curl        : RM "+ pay[1]);
+System.out.println("Service fee             : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid  : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate7 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[6] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Colouring              : RM "+ pay[6]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+						
+public static void printCalculate8 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[5] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Perming                : RM "+ pay[5]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate9 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[7] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Rebonding              : RM "+ pay[7]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate10 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[5] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relaxing               : RM "+ pay[5]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate11 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[8] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Scalp Treatment        : RM "+ pay[8]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate12 (double[]pay,double[]payfee,String time,String 
+double custprice = pay[9] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relax Treatment        : RM "+ pay[9]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printCalculate13 (double[]pay,double[]payfee,String time,String date,String day) {
+double custprice = pay[10] + payfee[0];
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Keratin Treatment      : RM "+ pay[10]);
+System.out.println("Service fee            : RM "+ payfee[0]);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ custprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+				     
+public static void print1 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[2] + payfee[1];
+double Totalhome = pay[2]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair Cut           : RM "+ pay[2]);
+System.out.println("Transportation fee : RM "+ payfee[1]);
+System.out.println("Total Discount     : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+	    			
+
+
+public static void print2 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[1] + payfee[1];
+double Totalhome = pay[1]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair Cut                : RM "+ pay[1]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print3 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[4] + payfee[1];
+double Totalhome = pay[4]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut           : RM "+ pay[4]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print4 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[3] + payfee[1];
+double Totalhome = pay[3]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut           : RM "+ pay[3]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print5 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[0] + payfee[1];
+double Totalhome = pay[0]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Dry           : RM "+ pay[0]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print6 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[1] + payfee[1];
+double Totalhome = pay[1]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Curl          : RM "+ pay[1]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print7 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[6] + payfee[1];
+double Totalhome = pay[6]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Colouring               : RM "+ pay[6]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+					
+public static void print8 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[5] + payfee[1];
+double Totalhome = pay[5]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Perming                 : RM "+ pay[5]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print9 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[7] + payfee[1];
+double Totalhome = pay[7]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" 
+System.out.println("");
+System.out.println("Rebonding               : RM "+ pay[7]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print10 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[5] + payfee[1];
+double Totalhome = pay[5]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+ System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relaxing                : RM "+ pay[5]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print11 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[8] + payfee[1];
+double Totalhome = pay[8]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Scalp Treatment         : RM "+ pay[8]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print12 (double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[9] + payfee[1];
+double Totalhome = pay[9]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relax Treatment         : RM "+ pay[9]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+
+public static void print13(double[]pay,double[]payfee,String time,String date,String day,String address) {
+double custprice = pay[10] + payfee[1];
+double Totalhome = pay[10]*0.15;
+double Allprice = custprice-Totalhome;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Address: " + address);
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Keratin Treatment       : RM "+ pay[10]);
+System.out.println("Transportation fee      : RM "+ payfee[1]);
+System.out.println("Total Discount          : RM-"+ Totalhome);
+System.out.println("\n");
+System.out.println(" TOTAL price to be paid : RM" + Allprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime");}
+				     
+public static void printcal1(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[2]*0.30;
+double Dis2 = pay[2];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair cut               : RM  "+ pay[2]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal2(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[1]*0.30;
+double Dis2 = pay[1];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair cut               : RM  "+ pay[1]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println("PSs: cancel anytime"); }
+
+public static void printcal3(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[4]*0.30;
+double Dis2 = pay[4];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM  "+ pay[4]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+					
+public static void printcal4(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[3]*0.30;
+double Dis2 = pay[3];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM  "+ pay[3]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+					
+public static void printcal5(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[0]*0.30;
+double Dis2 = pay[0];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Dry          : RM  "+ pay[0]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal6(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[1]*0.30;
+double Dis2 = pay[1];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Curl         : RM  "+ pay[1]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal7(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[6]*0.30;
+double Dis2 = pay[6];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Colouring              : RM  "+ pay[6] );
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal8(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[5]*0.30;
+double Dis2 = pay[5];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Perming                : RM  "+ pay[5]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal9(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[7]*0.30;
+double Dis2 = pay[7];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Rebonding              : RM  "+ pay[7]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal10(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[5]*0.30;
+double Dis2 = pay[5];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relaxing               : RM  "+ pay[5]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+				     
+public static void printcal11(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[8]*0.30;
+double Dis2 = pay[8];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Scalp Treatment        : RM  "+ pay[8]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal12(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[9]*0.30;
+double Dis2 = pay[9];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relax Treatment        : RM  "+ pay[9]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void printcal13(double[]pay,double[]payfee,String time,String date,String day) {
+double total2 = pay[10]*0.30;
+double Dis2 = pay[10];
+double studentprice1 = (Dis2+payfee[0])-total2;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Keratin Treatment      : RM  "+ pay[10]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total2);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice1);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+				     
+public static void prinT1(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[2]*0.25;
+double Dis1 = pay[2];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair Cut               : RM  "+ pay[2]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT2(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[1]*0.25;
+double Dis1 = pay[1];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Hair Cut               : RM  "+ pay[1]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT3(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[4]*0.25;
+double Dis1 = pay[4];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM  "+ pay[4]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT4(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[3]*0.25;
+double Dis1 = pay[3];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow+Cut          : RM  "+ pay[3]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+public static void prinT5(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[0]*0.25;
+double Dis1 = pay[0];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Dry          : RM  "+ pay[0]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total dicount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+						
+public static void prinT6(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[1]*0.25;
+double Dis1 = pay[1];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Wash+Blow Curl         : RM  "+ pay[1]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT7(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[6]*0.25;
+double Dis1 = pay[6];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Colouring              : RM  "+ pay[6]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+public static void prinT8(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[5]*0.25;
+double Dis1 = pay[5];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Perming                : RM  "+ pay[5]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT9(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[7]*0.25;
+double Dis1 = pay[7];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Rebonding              : RM  "+ pay[7]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT10(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[5]*0.25;
+double Dis1 = pay[5];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relaxing               : RM  "+ pay[5]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+public static void prinT11(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[8]*0.25;
+double Dis1 = pay[8];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Scalp Treatment        : RM  "+ pay[8]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT12(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[9]*0.25;
+double Dis1 = pay[9];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Relax Treatment        : RM  "+ pay[9]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }
+
+public static void prinT13(double[]pay,double[]payfee,String time,String date,String day) {
+double total1 = pay[10]*0.25;
+double Dis1 = pay[10];
+double studentprice = (Dis1+payfee[0])-total1;
+System.out.println("");
+System.out.println("**********RECEIPT**********");
+System.out.println("");
+System.out.println("Time and Date For Appointment :" + day +" " + " " + time +" "+" " +date);
+System.out.println("");
+System.out.println("Keratin Treatment      : RM  "+ pay[10]);
+System.out.println("Service fee            : RM  "+ payfee[0]);
+System.out.println("Total discount          : RM- "+ total1);
+System.out.println("\n");
+System.out.println("TOTAL price to be paid : RM  "+ studentprice);
+System.out.println("");
+System.out.println("Thank you for your booking !");
+System.out.println(" PS: cancel anytime"); }}
