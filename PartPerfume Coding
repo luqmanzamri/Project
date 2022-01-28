@@ -1,0 +1,376 @@
+package assignment;
+import java.util.Scanner;
+public class Assignment3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String name;
+		String IC;
+		String phoneNum;
+		String email;
+		int choice;
+		int[] strengthArray = new int [3];
+		String[] noteArray = new String[3];	
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("    \n   Welcome to UUM Customized perfume Monthly Subscription System \n");
+		System.out.println("===================================================================\n");
+		
+		System.out.print("Enter your name: ");
+		name = scan.next();
+		
+		System.out.print("Enter your IC number: ");
+		IC = scan.next();
+		
+		System.out.print("Enter your phone number: ");
+		phoneNum = scan.next();
+		
+		System.out.print("Enter your email address: ");
+		email = scan.next();
+		
+		char gender = gender();
+		displayPrice();
+		
+		System.out.println("You can design a free sample 2 ml of perfume or buy the full bottle of perfume. Enter");
+		System.out.println("1 to order a free sample 2 ml perfume");
+		System.out.println("2 to buy the full bottle of perfume");
+		choice = scan.nextInt();
+		
+		if (choice==1) {
+			order(strengthArray,noteArray);
+			sampleDescription(noteArray);
+			System.out.println("\nYour customized sample perfume is ready!");
+			System.out.println("*This sample of 2 ml perfume is totally free. You only need to pay the delivery fee.");
+			System.out.println("");
+			double locPrice = location();
+			System.out.println("The delivery fee is RM "+ locPrice);
+			System.out.println("Thank you for ordering.The sample perfume will be delivered in 2 working days.");
+			System.out.println("You can confirm the full bottle order by email after trying the sample. ");
+			System.exit(0);
+		}
+		
+		else if (choice==2) {
+			order(strengthArray,noteArray);
+			double price = size(strengthArray);
+			orderDescription(noteArray,price);
+			double priceall = choose(price,gender,strengthArray,noteArray);
+			double discount1 = discount(priceall);
+			double locationprice = location();
+			double total = priceall - discount1 + locationprice;
+			
+			System.out.println("\n****************************************************");
+			System.out.println("The total price is RM " + total);	
+			System.out.println("Thank you for ordering! The perfume for this month will be delivered in 2 working days.");
+			System.out.println("Your next order will automatically be placed on the same order date next month.");	
+			otherOp();
+		}
+		
+		else
+			System.out.println("Wrong input");
+	}
+	
+	public static char gender() {
+		char gender;
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.print("Enter gender (M-male, F-female): ");
+			gender = scan.next().charAt(0);
+
+			if ((gender == 'M')|| (gender == 'm')) 
+				displayM();
+				
+			else if ((gender == 'F')|| (gender == 'f'))
+				displayF();
+			
+			else
+				System.out.println("Wrong input");
+		}while((gender!='M')&&(gender!='m')&&(gender!='F')&&(gender!='f'));
+		
+		return gender;
+		
+	}
+	
+	public static void displayM() {
+		
+		String[][] note = new String[][] {
+			{"Top Note","Middle Note","Base Note"}, 
+			{"Cassis  ","Cinnamon","Patchoulli"},
+			{"Bergamot","Fennel  ","Sandalwood"},
+			{"Orange  ","Clove   ","Cistus"},
+			{"Acasia  ","Plum   ","Lemongrass"}
+		};
+		System.out.println("\nAvailable ingredients for top, middle and base notes.");
+		System.out.println("");
+		for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(note[i][j] +" "+"\t");
+            }
+            System.out.println();
+		}
+	}
+	
+	public static void displayF() {
+		
+		String[][] note = new String[][] {
+			{"Top Note  ","Middle Note","Base Note"}, 
+			{"Orange    ","Chamomile","Cedarwood"},
+			{"Neroli    ","Geranium","Pine"},
+			{"Lavender  ","Juniper","Vetiver"},
+			{"Frangipani","Daisy  ","Orchid"}
+		};
+		System.out.println("\nAvailable ingredients for top, middle and base notes.");
+		System.out.println("");
+		
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(note[i][j] +" "+"\t");
+            }
+            System.out.println();
+        }
+	}
+	
+	public static void displayPrice() {
+
+		System.out.println("\n****************************************************");
+		String[][] topNote = new String[][] {{"10 ml","15 ml","20 ml"}, {"RM 3", "RM 5", "RM 2"}};
+		String[][] midNote = new String[][] {{"10 ml","15 ml","20 ml"}, {"RM 4.5", "RM 7.5", "RM 3"}};
+		String[][] baseNote = new String[][] {{"10 ml","15 ml","20 ml"}, {"RM 6", "RM 10", "RM 4"}};
+		System.out.println("Price of top, middle and base notes according to the size of perfume");
+		System.out.println("\nPrice of top note");
+		for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(topNote[i][j] +"\t" +" ");
+	            }
+	            System.out.println();
+		 }
+		System.out.println("");
+		
+		System.out.println("Price of middle note");
+		for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(midNote[i][j] +"\t" +" ");
+	            }
+	            System.out.println();
+		 }
+		System.out.println("");
+		
+		System.out.println("Price of base note");
+		for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(baseNote[i][j] +"\t"+" ");
+	            }
+	            System.out.println();
+		 }
+		System.out.println("\n****************************************************");
+	}
+	
+	public static void order(int[] strengthArray, String[] noteArray) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("\nEnter the ingredient for top note: ");
+		noteArray[0] = scan.next();
+		
+		System.out.print("Enter the strength of top note; 1-lower 2-medium 3-higher: ");
+		strengthArray[0] = scan.nextInt();
+		
+		System.out.print("\nEnter the ingredient for middle note: ");
+		noteArray[1] = scan.next();
+		
+		System.out.print("Enter the strength of middle note; 1-lower 2-medium 3-higher: ");
+		strengthArray[1] = scan.nextInt();
+		
+		System.out.print("\nEnter the ingredient for base note: ");
+		noteArray[2] = scan.next();
+		
+		System.out.print("Enter the strength of base note; 1-lower 2-medium 3-higher: ");
+		strengthArray[2] = scan.nextInt();
+		
+	}
+	
+	public static double size(int[] strengthArray) {
+		int size;
+		double pricetopnote = 0;
+		double pricemiddlenote=0;
+		double pricebasenote=0;
+		double price=0;
+		Scanner scan = new Scanner(System.in);
+		
+	do {
+		System.out.print("\nEnter the size of bottle in ml 10 or 15 or 20: ");
+		size = scan.nextInt();
+		
+		if ((size == 10) || (size == 15) || (size == 20))
+		{
+			pricetopnote = size * 0.3 * strengthArray[0];
+			pricemiddlenote = size * 0.5 * strengthArray[1];
+			pricebasenote = size * 0.2 * strengthArray[2];
+			price = pricetopnote + pricemiddlenote + pricebasenote;
+		}
+		
+		else
+			System.out.print("Unavailable size. ");
+	
+	} while((size != 10) && (size != 15) && (size != 20));
+	
+	return price;
+	}
+	
+	public static void sampleDescription(String[] noteArray) {
+		System.out.println("\n****************************************************");
+		System.out.println("Your Customized perfume sample description");
+		System.out.println("\nTop note is "+ noteArray[0]);
+		System.out.println("Middle note is "+ noteArray[1]);
+		System.out.println("Base note is "+ noteArray[2]);
+	}
+	
+	public static void orderDescription(String[] noteArray, double price) {
+		String perfumeName;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter a name for customized perfume: ");
+		perfumeName = scan.next();
+		
+		System.out.println("\n****************************************************");
+		System.out.println("Your Customized perfume description");
+		System.out.println("\nName of your perfume is " + perfumeName);
+		
+		System.out.println("Top note is "+ noteArray[0]);
+		System.out.println("Middle note is "+ noteArray[1]);
+		System.out.println("Base note is "+ noteArray[2]);
+		System.out.println("The price of the perfume is RM "+ price);
+		System.out.println("\n****************************************************");
+	}
+	
+	public static double choose(double price,char gender, int[]strengthArray, String[]noteArray) {
+		int checkOut;
+		double priceall=0;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("You perfume for this month is ready!");
+		System.out.println("The same customized perfume will be delivered to you every month.");	
+		System.out.println("You also can change your plan by designing new perfume for next month.");
+		
+		System.out.println("\n****************************************************");
+		System.out.println("Enter 1 to continue designing the perfume for next month or 2 to checkout the price.");
+		checkOut = scan.nextInt();
+		
+		if (checkOut == 1){	
+			System.out.println("\nNow you can choose the ingredients and size of the perfume for next month.");
+			if ((gender == 'M')|| (gender == 'm')) 
+				displayM();
+				
+			else if ((gender == 'F')|| (gender == 'f'))
+				displayF();
+			
+			else
+				System.out.println("Wrong input");
+			
+			displayPrice();
+			order(strengthArray, noteArray);
+			priceall = size(strengthArray);
+			orderDescription(noteArray,priceall);
+			System.out.println("You perfume for next month is ready!");
+			}
+			
+		priceall= priceall+price;
+		return priceall;
+	}
+
+	public static double discount(double price1)
+	{
+		double discount=0;
+		int empBottles;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the number of empty bottles to get discount: ");
+		empBottles = scan.nextInt();
+		discount = empBottles * 0.05 * price1;
+		return discount;
+	}
+	
+	public static double location()
+	{
+		int location;
+		double locationPrice=0;
+		String addressOut;
+		String addressIn;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the location; 1 for Inside UUM or 2 for Outside UUM:  ");
+		location = scan.nextInt();
+		
+		if (location == 1) {
+			locationPrice = 2;
+			System.out.print("Enter hostel name: ");
+			addressIn = scan.next();		
+		}
+		
+		else if(location == 2) {
+			locationPrice = 4;
+			System.out.print("Enter address: ");
+			addressOut = scan.next();
+		}
+		else 
+			System.out.print("Wrong input!");
+		
+		return locationPrice;
+	}
+	
+	public static void otherOp() {
+		Scanner scan = new Scanner(System.in);
+		int choiceOp;
+		System.out.println("\nDo you have any other operations?");	
+		System.out.println("1 - Pause the plan after this order");	
+		System.out.println("2 - Unsubscribe the plan after this order");	
+		System.out.println("3 - No operation");	
+		choiceOp = scan.nextInt();
+		if (choiceOp == 1)
+			pause();
+		else if (choiceOp == 2) 
+			unsubscribe();
+		else if (choiceOp == 3)
+			exit();					
+		else 
+			System.out.print("Wrong input!");
+	}
+	
+	public static void pause() {
+		int monthspause=0;
+		Scanner scan = new Scanner(System.in);
+		do {  
+			System.out.println("How long do you want to pause the plan? (1-6 months)");
+			monthspause = scan.nextInt();
+			if ((monthspause > 6) || (monthspause < 1))
+				System.out.println("You can pause for 1 to 6 months only");
+				
+			else {
+				System.out.println("The plan will be paused for " + monthspause +" months after this order.Thank you");
+				System.exit(0);
+			}
+		}while((monthspause>6)||(monthspause<1));
+	}
+	
+	public static void unsubscribe()  {
+		char unsubscribe='Y';
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.println("Do you want to unsubscribe the plan? Y for yes or N for no");
+			unsubscribe = scan.next().charAt(0);
+			if ((unsubscribe == 'Y')|| (unsubscribe == 'y')) {
+				System.out.println("Your plan has been unsubscribed. Thank you");
+				System.exit(0);
+			}
+				
+			else if ((unsubscribe == 'N')|| (unsubscribe == 'n'))
+				System.out.println("Your plan will be continued for next month.Thank you");	
+			
+			else
+				System.out.println("Wrong input");
+		}while((unsubscribe != 'Y') && (unsubscribe != 'y') && (unsubscribe != 'N') && (unsubscribe != 'n')) ;
+	  }
+	
+	public static void exit()  { 
+		System.out.println("Thank you for ordering.");
+		System.out.println("For more information contact: organicperfume@gmail.com or 04-6073232");
+		    System.exit(0);
+		  }
+		
+}
