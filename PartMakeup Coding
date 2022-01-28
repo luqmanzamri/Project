@@ -1,0 +1,469 @@
+package assignment;
+import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+class Assignment3 {
+
+	 	static void showmessage() {
+			System.out.println("Basic || Intermediate || Advance");
+		  }
+		static double basic(double x){
+		    return 80 - (80* x);
+		  }
+		static double advance(double x){
+		    return 150 - (80* x);
+		  }
+		static double inter(double x){
+		    return 200 - (80* x);
+		  }
+		
+		static void jenisclass() {
+			String[][] kocos = { {"EYE","FACE", "LIPS", "FULL"}, {"Basic", "Intermediate", "Advance"} };
+			
+			System.out.println(kocos[0][0]+ "  : "+kocos[1][0] +" | " + kocos[1][1] +" | "+ kocos[1][2]  +" |" );
+			System.out.println(kocos[0][1]+ " : "+kocos[1][0] +" | " + kocos[1][1] +" | "+ kocos[1][2]  +" |" );
+			System.out.println(kocos[0][2]+ " : "+kocos[1][0] +" | " + kocos[1][1] +" | "+ kocos[1][2]  +" |" );
+			System.out.println(kocos[0][3]+ " : "+kocos[1][0] +" | " + kocos[1][1] +" | "+ kocos[1][2]  +" |" );
+		}
+		
+		
+		static void countDown(Integer x){
+	        // wait 10 seconds
+	        System.out.println("\nCount Down - " + x.toString() + " seconds!!");
+	        for(Integer i=1;i<=x;i++){
+	            try{
+	                TimeUnit.SECONDS.sleep(1);
+	            }catch(InterruptedException e){
+	                e.printStackTrace();
+	            }
+	            System.out.print ("\r" + i.toString());
+	        }
+	        System.out.println("\n------------------------");
+	    }
+		
+		static boolean isValidMail(String email) {
+	        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+	        return email.matches(regex);
+	     }
+		
+		public static void showPaymentMethod(){
+	        System.out.println("\nPayment Method");
+	        System.out.println("=================================================");
+	        System.out.println("1. Cash On Delivery");
+	        System.out.println("2. Online Bank In");
+	        System.out.println("3. Card Credit");
+	        
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.print("Pay using: ");
+	        String payMethod = sc.next();
+	    }
+		
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+       Scanner sc = new Scanner(System.in);
+		
+
+        System.out.println("*******************************************");
+		System.out.println("     Welcome to System House of Makeup ");
+		System.out.println("*******************************************");
+		System.out.println("*******************************************");
+		System.out.println("> User");
+		System.out.println("> Tutor");
+		System.out.println("Enter as (U/T):");
+		char system = sc.next().charAt(0);
+		
+		switch (system)
+		{
+		case 'U':
+		String firstname;
+		String lastname;     
+		String fullname;
+		int matric;
+		int age;
+		String email;
+		char keyword;
+		char cate;
+		int phone;
+		char item;
+		double tp1=80,tp2=150,tp3=200;
+
+		String choice;
+	
+		
+		System.out.println("----------------------------------------------------------------------");
+		System.out.println("\t\tWelcome to the E'Beauty Makeup Class");
+		System.out.println("----------------------------------------------------------------------");
+		
+		System.out.println("Enter your first name : ");
+		firstname = sc.next();
+		System.out.println("Enter your lastname name : ");
+		lastname = sc.next();
+		fullname = firstname +  lastname;
+		
+		System.out.println("Enter your age: ");
+		age = sc.nextInt();
+		
+		System.out.println("Enter your gender (Male/Female) : ");
+		char gender = sc.next().charAt(0);
+		
+		System.out.println("Enter your Email: ");
+		email = sc.next();
+		
+		System.out.println("----------------------------------------------------------------------");
+		System.out.println("\t\there your information");
+		System.out.println("----------------------------------------------------------------------");
+		
+		System.out.println("Name   : " + fullname);
+		System.out.println("Age    :" + age);
+		System.out.println("Gender :" + gender);
+		System.out.println("Email  :" + email);
+		
+		System.out.println("----------------------------------------------------------------------");
+		System.out.println("\t\tDetail about the Make Up Class ");
+		System.out.println();
+		System.out.println("There will be 3 structure or part of face that we will focus on Makeup session");
+		System.out.println();
+		System.out.println(" > EYE");
+		System.out.println(" > FACE");
+		System.out.println(" > LIP");
+		System.out.println(" > FULL");
+		System.out.println();
+		System.out.println("We will provide class for each part and there are also have complete session for all part");
+		System.out.println();
+		System.out.println("For each part or structure, there will have 3 different categories : ");
+		System.out.println();
+		
+		jenisclass();
+		System.out.println();
+		System.out.println(" Every part will have different class hour and different topic");
+	    System.out.println("----------------------------------------------------------------------");
+	    System.out.println("-------------------------------------------------------------------------------------------------------");
+		System.out.println("\t\tBASIC\t\t|\t\tINTERMEDIATE\t\t|\t\tADVANCE\t\t\t|");
+		System.out.println("8 hours class\t\t\t|\t10 hours class\t\t\t|\t12 hours class\t\t\t|");
+		System.out.println("Certificate on completion\t|\tCertificate on completion\t|\tCertificate on completion\t|");
+		System.out.println("1-year tutorial vid access\t|\tlifetime tutorial video access\t|\tlifetime tutorial video access\t|");
+		System.out.println("Limited topic\t\t\t|\tFull topic\t\t\t|\tFull topic with extra notes\t|");
+		System.out.println("\t\t-\t\t|\tAssist support\t\t\t|\tAssist support\t\t\t|");
+		System.out.println("\t\t-\t\t|\t\t-\t\t\t|\tTutor guide class\t\t|");
+		System.out.println("\t\t-\t\t|\t\t-\t\t\t|\tAble access tutor certificate\t|");
+		System.out.println("\t\tRM 80\t\t|\t\tRM150\t\t\t|\t\tRM 200\t\t\t|");
+		System.out.println("-------------------------------------------------------------------------------------------------------");
+		System.out.println("P.S Purchasing any 2 advance class allow you to get Tutor Makeup Certificate ");
+		System.out.println();
+		
+		System.out.println("Please choose your class option");
+		System.out.println("- EYE (E) -- FACE (F) -- LIPS (L) -- FULL (P) -");
+		System.out.println("Insert your choice (Keyword) : ");
+		keyword = sc.next().charAt(0);
+		System.out.println();
+		System.out.println("Please choose your class categories");
+		System.out.println("- BASIC (B) -- INTERMEDIATE (I) -- ADVANCE (A) -");
+		System.out.println("Insert your choice (Keyword) : ");
+		cate = sc.next().charAt(0);
+		System.out.println();
+		
+		
+		
+		if(keyword=='E')                    // class if else
+		{
+			System.out.print("You are choosing class Eye and ");
+		}
+		else if(keyword=='F')
+		{
+			System.out.print("You are choosing class Face and ");
+		}
+		else if(keyword== 'L')
+		{
+			System.out.print("You are choosing class Lips and ");
+		}
+		else if(keyword== 'P')
+		{
+			System.out.print("You are choosing class Full and ");
+		}
+		
+		
+		if(cate=='B')                     // categories if else 
+		{
+			System.out.println("Basic categories ");
+		}
+		else if (cate == 'I')
+		{
+			System.out.println("Intermediate categories ");
+		}
+		else if (cate =='A')
+		{
+			System.out.println("Advance categories");
+		}
+		
+		switch (cate)
+		{
+		case 'B':
+			System.out.println("Total price = RM " + tp1);
+			break;
+			
+		case 'I':
+			System.out.println("Total price = RM " + tp2);
+			break;
+			
+		case 'A':
+			System.out.println("Total price = RM " + tp3);
+			break;
+		}
+		System.out.println();
+		System.out.println(" Please insert your details below for final confirmation ");
+		System.out.println("Enter your phone number : ");
+		phone=sc.nextInt();
+		System.out.println("Enter your University name : ");
+		String uni=sc.next();
+		System.out.println("Enter your student ID (O if doesnt have) :");
+		int matrics = sc.nextInt();
+		if (matrics ==0 ) {
+		}
+		else if (cate=='B') {
+			System.out.println("(Student Price)RM  : " + basic(0.2));
+		}
+		else if (cate=='I') {
+			System.out.println("(Student Price)RM  : " + advance(0.2));
+		}
+		else if (cate=='A') {	
+			System.out.println("(Student Price)RM  : " + inter(0.2));
+		}
+		
+		System.out.println("Name               : " + firstname);
+		System.out.println("Phone No           : " + phone);
+		System.out.println("Age                : " + age);
+		System.out.println("Gender             : " + gender);
+		System.out.println("Email              : " + email);
+		System.out.println("University         : " + uni);
+		System.out.println("Matric             : " + matrics);
+		System.out.println();
+		showPaymentMethod();
+		
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------");
+		
+		break;
+		
+		case 'T':
+			
+			String regUsername = "luqman@google.com";
+	        String regPassword = "Abc@123";
+			boolean isAuth = false;
+		    String username;
+		    String password;
+			do {
+			System.out.println("- Username and password are give when you got certificate for Tutor -");
+			System.out.println();
+			System.out.println("Please enter Username:");
+			username = sc.next();   
+			System.out.println("Please enter Password:");
+			password = sc.next();
+			
+			/*if (user== user && pass==12345) 
+				System.out.println("Welcome " + user);
+				else {
+				System.out.println("invalid user");
+				break;
+				}*/
+			if(!isValidMail(username)){
+                System.out.println("<<<Error: Invalid Email Formatting>>>");     
+            }else{
+                if(username.compareTo(regUsername)==0 && password.compareTo(regPassword)==0)
+                    isAuth = true;
+                else{
+                    System.out.println("<<<Error: Invalid Username and Password>>>");   
+                }
+            }
+
+            if(isAuth == false){
+                countDown(10);
+            }
+            
+            }while(isAuth == false);
+            System.out.println("Welcome ^^, " + username); 
+
+            boolean isLoopMenu = false;
+			
+
+			
+			String tutoll;
+			String svs;
+			String rent;
+			
+			double custlight; // cust for light makeup
+			double custheavy; // " " heavy makeup
+			double totalight; // income from cust light makeup
+			double totalheavy; // " " heavy makeup
+		    double totalsv; // total income
+			double custsv; // total cust for service
+			double harga1 = 100;
+			double harga2= 150;
+			double journeysv;
+			double totalkm;
+			double totaljourney;
+			double totalprofit;
+			
+			String makeuprent;
+			double rentA;
+			double hourA;
+			double rentB;
+			double hourB;
+			double totalrent;
+			
+			
+			char classcat;
+			double tutoprice;
+			
+			System.out.println("--------------------------------------------");
+			System.out.println("TUTO SECTION - CALCULATION SERVICE");
+			System.out.println("--------------------------------------------");
+			System.out.println("Basically there are three service related to makeup Industries");
+			System.out.println();
+			System.out.println("> Makeup Tutorial (Keyword - T)");
+			System.out.println("> Makeup Services (Keyword - S)");
+			System.out.println("> Makeup Tool Rent (Keyword - R)");
+			System.out.println();
+			System.out.println("Enter Services (Keyword) :");
+			char ope = sc.next().charAt(0);
+			
+			switch (ope)
+			{
+			case 'T':
+					
+				System.out.println("");
+				System.out.println("--------------------------------------------");
+				System.out.println("\t\t- MAKEUP TUTORIAL -");
+				System.out.println("");
+				System.out.println("Make up tutorial can come for 2, 3 or part of face");
+				System.out.println("For example, face, eye, lips and full makeup");
+				System.out.println("And it can come for 2, 3 or more class categories");
+				System.out.println("Let's see if we have 3 class categories");
+				System.out.println("");
+				System.out.println("--------------------------------------------");
+				System.out.println("\tEYE     | Basic");
+				System.out.println("\t\t| Intermediate");
+				System.out.println("\t\t| Advance");
+				System.out.println("\tFACE    | Basic");
+				System.out.println("\t\t| Intermediate");
+				System.out.println("\t\t| Advance");
+				System.out.println("\tLIPS    | Basic");
+				System.out.println("\t\t| Intermediate");
+				System.out.println("\t\t| Advance");
+				System.out.println("\tFULL    | Basic");
+				System.out.println("\t\t| Intermediate");
+				System.out.println("\t\t| Advance");
+				System.out.println("--------------------------------------------");
+				System.out.println("");  
+				
+				System.out.println("\t Basic\t\t|\t Intermediate\t|\tAdvance\t\t");
+				System.out.println("\t RM80/Customer\t|\t RM150/Customer\t|\tRM200/Customer\t\t"); 
+				System.out.println();
+				System.out.println("As Example....");
+				System.out.println(" If The class are registered by student They can get 20% discount");
+				System.out.println("> Basic (Keyword - B)");
+				System.out.println("> Intermediate (Keyword - I)");
+				System.out.println("> Advance (Keyword - A)");
+				System.out.println("Please enter class categories : ");
+				classcat=sc.next().charAt(0);
+		
+				 if (classcat == 'B')
+				 {
+					 tutoprice =80 -(80*20/100);
+					 System.out.println(" Original price : Rm 80");
+					 System.out.println(" Student price : " + tutoprice);
+				 }
+				 else if (classcat == 'I')
+				 {
+					 tutoprice = 150 - (150*20/100);
+					 System.out.println(" Original price : Rm150");
+					 System.out.println(" Student price : " + tutoprice);
+				 }
+				 else if (classcat == 'A')
+				 {
+					 tutoprice = 200 -(200*20/100);
+					 System.out.println(" Original price : Rm 200");
+					 System.out.println(" Student price : " + tutoprice);
+				 }
+				
+				
+				System.out.println("--------------------------------------------");
+				break;
+				
+			case 'S':
+				
+				System.out.println("--------------------------------------------");
+				System.out.println("\t\t- MAKEUP SERVICE -");
+				System.out.println("");
+				System.out.println("Makeup service can come for two or more categories");
+				System.out.println("For example we have 2 categories");
+				System.out.println("> light makeup  --  RM 100");
+				System.out.println("> Heavy makeup  --  RM 150");
+				System.out.println();
+				System.out.println("CALCULATION...");
+				System.out.println("Enter Number of customer for light makeup : ");
+				custlight=sc.nextDouble();
+				
+				System.out.println("Enter Number of customer for heavy makeup : ");
+				custheavy=sc.nextDouble();
+				
+				System.out.println("Enter Distance(km) your total journey : ");
+				journeysv=sc.nextDouble();
+			
+				totalight = custlight*harga1;
+				totalheavy = custheavy*harga2;
+				custsv = custlight + custheavy;
+				totalsv = totalight+totalheavy;
+				totalkm = journeysv/13;
+				totaljourney = totalkm*2.15;
+				totalprofit = totalsv - totaljourney;
+				
+				
+				System.out.println("Total customer for Makeup service : " + custsv);
+				System.out.println("Total income for Makeup service : RM " + totalsv);
+				System.out.format("Net profit budget for Makeup service : RM %.2f" , totalprofit);
+				System.out.println();
+				
+				System.out.println("--------------------------------------------");
+				break;
+				
+			case 'R':
+				System.out.println("--------------------------------------------");
+				System.out.println("\t\t- MAKEUP RENT -");
+				System.out.println("");
+				System.out.println("  SET A     |  SET B");
+				System.out.println("  Face Set  |  Full set (Face, Nail, hair)");
+				System.out.println("  RM40/Day  |  RM80/Day");
+				System.out.println();
+				System.out.println("Enter total day Set A has been rent : ");
+				rentA = sc.nextDouble();
+		   		System.out.println("Enter total day Set B has been rent : ");
+				rentB=sc.nextDouble();
+				
+				totalrent= (rentA*40)+(rentB*80);
+				
+				System.out.println("Total price for makeup rent service : RM " + totalrent);
+
+				
+				System.out.println("--------------------------------------------");
+				break;
+				default:
+					
+		
+		}while(isLoopMenu == false);
+	}
+		
+		
+	
+	
+}
+}
