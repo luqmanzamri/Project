@@ -1,0 +1,305 @@
+Output when gender is female 
+Welcome to UUM Customized perfume Monthly Subscription System 
+
+===================================================================
+
+Enter your name: Lisa
+Enter your IC number: 000904-08-0944
+Enter your phone number: 012-7775454
+Enter your email address: lisa@gmail.com
+Enter gender (M-male, F-female): F
+
+Available ingredients for top, middle and base notes.
+
+Top Note   	Middle Note 	Base Note 	
+Orange     	Chamomile 	Cedarwood 	
+Neroli     	Geranium 	Pine 	
+Lavender   	Juniper 	Vetiver 	
+Frangipani 	Daisy   	Orchid 	
+
+****************************************************
+
+Output when gender is male 
+  Welcome to UUM Customized perfume Monthly Subscription System 
+
+===================================================================
+
+Enter your name: Job
+Enter your IC number: 000907080957
+Enter your phone number: 0165454321
+Enter your email address: job@gmail.com
+Enter gender (M-male, F-female): M
+
+Available ingredients for top, middle and base notes.
+
+Top Note 	Middle Note 	Base Note 	
+Cassis   	Cinnamon 	Patchoulli 	
+Bergamot 	Fennel   	Sandalwood 	
+Orange   	Clove    	Cistus 	
+Acasia   	Plum    	Lemongrass 	
+
+****************************************************
+
+
+
+
+Output to display price for top, middle and base note according to the size of perfume(10ml, 15ml and 20ml)  
+
+Price of top, middle and base notes according to the size of perfume
+
+Price of top note
+10 ml	 15 ml	 20 ml	 
+RM 3	 RM 5	 RM 2	 
+
+Price of middle note
+10 ml	 15 ml	 20 ml	 
+RM 4.5	 RM 7.5 RM 3	 
+
+Price of base note
+10 ml	 15 ml	 20 ml	 
+RM 6	 RM 10	 RM 4	 
+
+****************************************************
+
+Output when user enter 1 to design a sample perfume 
+You can design a free sample 2 ml of perfume or buy the full bottle of perfume. Enter
+1 to order a free sample 2 ml perfume
+2 to buy the full bottle of perfume
+1
+
+Enter the ingredient for top note: Orange
+Enter the strength of top note; 1-lower 2-medium 3-higher: 1
+
+Enter the ingredient for middle note: Juniper
+Enter the strength of middle note; 1-lower 2-medium 3-higher: 2
+
+Enter the ingredient for base note: Pine
+Enter the strength of base note; 1-lower 2-medium 3-higher: 3
+
+****************************************************
+Your Customized perfume sample description
+
+Top note is Orange
+Middle note is Juniper
+Base note is Pine
+
+Your customized sample perfume is ready!
+*This sample of 2 ml perfume is totally free. You only need to pay the delivery fee.
+
+Output when user enter 1 to design a sample perfume and the location is inside UUM
+
+Enter the location; 1 for Inside UUM or 2 for Outside UUM:  1
+Enter hostel name: Tnb
+The delivery fee is RM 2.0
+Thank you for ordering. The sample perfume will be delivered in 2 working days.
+You can confirm the full bottle order by email after trying the sample.
+
+Output when user enter 1 to design a sample perfume and the location is outside UUM
+
+Enter the location; 1 for Inside UUM or 2 for Outside UUM:  2
+Enter address: No.77 Taman Pelangi, Sitiawan
+The delivery fee is RM 4.0
+Thank you for ordering. The sample perfume will be delivered in 2 working days.
+You can confirm the full bottle order by email after trying the sample.
+
+Output when user enter 2 to design a full bottle of perfume for this month
+
+You can design a free sample 2 ml of perfume or buy the full bottle of perfume. Enter
+1 to order a free sample 2 ml perfume
+2 to buy the full bottle of perfume
+2
+
+Enter the ingredient for top note: Orange
+Enter the strength of top note; 1-lower 2-medium 3-higher: 2
+
+Enter the ingredient for middle note: Geranium
+Enter the strength of middle note; 1-lower 2-medium 3-higher: 3
+
+Enter the ingredient for base note: Pine
+Enter the strength of base note; 1-lower 2-medium 3-higher: 1
+
+Enter the size of bottle in ml 10 or 15 or 20: 10
+Enter a name for customized perfume: Thi
+
+****************************************************
+Your Customized perfume description
+
+Name of your perfume is Thi
+Top note is Orange
+Middle note is Geranium
+Base note is Pine
+The price of the perfume is RM 23.0
+
+****************************************************
+You perfume for this month is ready!
+The same customized perfume will be delivered to you every month.
+You also can change your plan by designing new perfume for next month.
+****************************************************
+Enter 1 to continue designing the perfume for next month or 2 to checkout the price.
+
+Output when user enter 1 to continue design a perfume for next month 
+
+Enter 1 to continue designing the perfume for next month or 2 to checkout the price.
+1
+
+Now you can choose the ingredients and size of the perfume for next month.
+
+Available ingredients for top, middle and base notes.
+
+Top Note   	Middle Note 	Base Note 	
+Orange     	Chamomile 	Cedarwood 	
+Neroli     	Geranium 	Pine 	
+Lavender   	Juniper 	Vetiver 	
+Frangipani 	Daisy   	Orchid 	
+
+****************************************************
+Price of top, middle and base notes according to the size of perfume
+
+Price of top note
+10 ml	 15 ml	 20 ml	 
+RM 3	 RM 5	 RM 2	 
+
+Price of middle note
+10 ml	 15 ml	 20 ml	 
+RM 4.5	 RM 7.5	 RM 3	 
+
+Price of base note
+10 ml	 15 ml	 20 ml	 
+RM 6	 RM 10	 RM 4	 
+
+****************************************************
+
+Enter the ingredient for top note: Neroli
+Enter the strength of top note; 1-lower 2-medium 3-higher: 1
+
+Enter the ingredient for middle note: Juniper
+Enter the strength of middle note; 1-lower 2-medium 3-higher: 2
+
+Enter the ingredient for base note: Vetiver
+Enter the strength of base note; 1-lower 2-medium 3-higher: 3
+
+Enter the size of bottle in ml 10 or 15 or 20: 15
+Enter a name for customized perfume: Thi
+
+****************************************************
+Your Customized perfume description
+
+Name of your perfume is Thi
+Top note is Neroli
+Middle note is Juniper
+Base note is Vetiver
+The price of the perfume is RM 28.5
+
+****************************************************
+You perfume for next month is ready!
+Enter the number of empty bottles to get discount: 2
+Enter the location; 1 for Inside UUM or 2 for Outside UUM:  1
+Enter hostel name: Tnb
+
+****************************************************
+The total price is RM 36.65
+Thank you for ordering! The perfume for this month will be delivered in 2 working days.
+Your next order will automatically be placed on the same order date next month.
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+
+Output when the perfume bottle size entered by user is 10,15 or 20 ml.
+
+Enter the size of bottle in ml 10 or 15 or 20: 10
+Enter a name for customized perfume: Thi
+
+Output when the perfume bottle size entered by user is not 10,15 or 20 ml.
+
+Enter the size of bottle in ml 10 or 15 or 20: 25
+Unavailable size.
+Enter the size of bottle in ml 10 or 15 or 20: 10
+Enter a name for customized perfume: Thi
+
+Output when user enter 2 to checkout the price
+
+Enter the number of empty bottles to get discount: 2
+Enter the location; 1 for Inside UUM or 2 for Outside UUM:  1
+Enter hostel name: Tnb
+
+****************************************************
+The total price is RM 23.0
+Thank you for ordering! The perfume for this month will be delivered in 2 working days.
+Your next order will automatically be placed on the same order date next month.
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+
+Output when user enter 1 to pause the subscription plan after this order. 
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+1
+How long do you want to pause the plan? (1-6 months)
+2
+The plan will be paused for 2 months after this order.Thank you
+
+Output when user enter 1 to pause the subscription plan after this order but the months is 0 or more than 6.
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+1
+How long do you want to pause the plan? (1-6 months)
+0
+You can pause for 1 to 6 months only
+How long do you want to pause the plan? (1-6 months)
+2
+The plan will be paused for 2 months after this order.Thank you
+
+Output when user enter 2 to unsubscribe the plan after this order and y or Y to confirm. 
+
+ Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+2
+Do you want to unsubscribe the plan? Y for yes or N for no
+y
+Your plan has been unsubscribed. Thank you
+
+Output when user enter 2 to unsubscribe the plan after this order and n or N to cancel back.
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+2
+Do you want to unsubscribe the plan? Y for yes or N for no
+n
+Your plan will be continued for next month. Thank you
+
+
+Output when user enter 2 to unsubscribe the plan but enter other than y,Y,n or N.
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+2
+Do you want to unsubscribe the plan? Y for yes or N for no
+o
+Wrong input
+Do you want to unsubscribe the plan? Y for yes or N for no
+
+Output when user enter 3 to exit the system
+
+Do you have any other operations?
+1 - Pause the plan after this order
+2 - Unsubscribe the plan after this order
+3 - No operation
+3
+Thank you for ordering.
+For more information contact: organicperfume@gmail.com or 04-6073232
