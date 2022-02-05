@@ -1,1 +1,72 @@
+package project;
+import java.util.Scanner;
+class Beauty {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		
+		char choices;
+		char pilih;
+		String name;
+		long age;
+		System.out.println("*********************************** ");
+		System.out.println("Beauty Online Onestock Center ");
+		System.out.println("************************************");
+		System.out.println();
+		System.out.println("Please enter your name : ");
+		name = sc.next();
+		System.out.println("PLease enter your IC number : ");
+		age = sc.nextLong();
+		
+		if (age > 50000000000L) {
+			System.out.println("Sorry you are not eligible to use this system");
+			System.exit(0);
+		} 
+		else {
+			System.out.println("*********************************** ");
+			System.out.println("Welcome to Beauty Online Onestock ");
+			System.out.println("************************************");
+		}
+		
+		
+		
+		
+		
+		do {
+			System.out.println("a - Makeup , b - Saloon , c - Perfume");
+			System.out.println("Enter your choices : ");
+			choices = sc.next().charAt(0);
+			
+			
+			if(choices == 'a') {
+				Makeup m = new Makeup();
+				m.main(args);
+			}
+			else if(choices=='b') {
+				Saloon s = new Saloon();
+				s.main(args);
+			}
+			else if(choices=='c') {
+				Perfume p = new Perfume();
+				p.main(args);
+			}
+			else {
+				System.out.println("Invalid characters ");
+			}
+			System.out.println("");
+			System.out.println("Do you want to continue? (Y/N): ");
+		     pilih = sc.next().charAt(0);
+		}while (pilih =='y' || pilih =='Y');
+				
+		}
+	
+		
+	public static void userInfo() {
+		
+		System.out.print("Thank you for using our service");
+		
+	
+	}
+}
 
